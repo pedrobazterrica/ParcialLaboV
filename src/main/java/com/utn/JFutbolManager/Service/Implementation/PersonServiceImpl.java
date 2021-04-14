@@ -1,5 +1,6 @@
 package com.utn.JFutbolManager.Service.Implementation;
 
+import com.utn.JFutbolManager.Model.Currency;
 import com.utn.JFutbolManager.Model.Manager;
 import com.utn.JFutbolManager.Model.Person;
 import com.utn.JFutbolManager.Model.Player;
@@ -41,6 +42,8 @@ public class PersonServiceImpl implements IPersonService {
         Manager manager = (Manager) this.getById(managerId);
         Player player = (Player) this.getById(playerId);
         manager.getPlayerList().add(player);
+        //ACA SE ACTUALIZA LA GUITA DEL MANAGER
+        manager.addMoneyToVault(player.getCurrency());
         personRepository.save(manager);
 
     }

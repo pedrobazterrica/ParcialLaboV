@@ -21,4 +21,10 @@ public class Manager extends Person{
     public TypePerson typePerson() {
         return TypePerson.MANAGER;
     }
+
+    public void addMoneyToVault(Currency currency){
+        double amount = currency.getAmount();
+        this.vaultWeight += amount;
+        this.totalAmount += amount * currency.getCurrencyType().getValue();
+    }
 }
