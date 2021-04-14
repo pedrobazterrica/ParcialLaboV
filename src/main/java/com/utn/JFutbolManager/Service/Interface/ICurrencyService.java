@@ -9,5 +9,4 @@ public interface ICurrencyService {
     public List<Currency> getAll();
     public Currency getById(Integer currencyId);
     public void delete(Integer CurrencyId);
-    public List<Currency> getPlayerList(Integer managerId);
 }
